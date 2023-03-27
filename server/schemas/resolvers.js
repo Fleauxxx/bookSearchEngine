@@ -57,7 +57,7 @@ const resolvers = {
     throw new AuthenticationError("Not logged in");
   },
   // Make it so a logged in user can only remove a book from their own profile
-  removeBook: async (parent, args, context) => {
+  deleteBook: async (parent, args, context) => {
     if (context.user) {
       const updatedUser = await User.findOneAndUpdate(
         { _id: context.user._id },
